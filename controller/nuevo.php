@@ -12,7 +12,10 @@
 		}
 
 		function registrarAlumno() {
-		    $this->model->insert();
+		    $matricula = $_POST['matricula'];
+		    $nombre = $_POST['nombre'];
+		    $apellido = $_POST['apellido'];
+		    $this->model->insert(['matricula' => $matricula, 'nombre' => $nombre, 'apellido' => $apellido]);
             echo 'Registra alumno';
         }
 	}
