@@ -3,12 +3,18 @@
 	class App {
 
 		function __construct() {
-			echo "<p>Nueva App</app>";
+			//echo "<p>Nueva App</app>";
 
-			$url = $_GET['url'];
+			$url = isset($_GET['url']) ? $_GET['url']: null;
 			$url = rtrim($url, '/');
 			$url = explode('/', $url);
 			
+			if(empty($url[0])) {
+				$archivoController = 'controller/main.php';
+				require_once $archivoController;
+				$controller = new Main();
+				return false;
+			} 
 			$archivoController = 'controller/' . $url[0] . '.php';
 
 			if(file_exists($archivoController)) {

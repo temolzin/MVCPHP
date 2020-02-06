@@ -7,9 +7,9 @@
 		
 		function __construct() 
 		{
+			//echo "Nuevo Controlador MAIN";
 			parent::__construct();
 			$this->view->render('main/index');
-			echo "Nuevo Controlador MAIN";
 		}
 
 		function saludo() {

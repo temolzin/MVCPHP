@@ -7,7 +7,7 @@
 		
 		function __construct()
 		{
-			echo '<p>Controller BASE</p>';
+			//echo '<p>Controller BASE</p>';
 			$this->view = new View();
 		}
 	}
